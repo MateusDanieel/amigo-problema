@@ -1,6 +1,6 @@
 # Amigo Problema
 
-**Amigo Problema** é um jogo digital inspirado no famoso *Amigos de M...*. O jogo tem como objetivo identificar, por meio de perguntas inusitadas, qual amigo se encaixa melhor em determinadas situações, revelando aspectos engraçados ou embaraçosos das personalidades dos participantes.
+**Amigo Problema** é um jogo digital inspirado no famoso jogo de cartas *"Amigos de M..."*. O jogo tem como objetivo identificar, por meio de perguntas inusitadas, qual amigo se encaixa melhor em determinadas situações, revelando aspectos engraçados ou embaraçosos das personalidades dos participantes.
 
 > **Atenção:** Este jogo é uma paródia e não tem a intenção de copiar ou infringir qualquer direito autoral de jogos originais. A proposta é oferecer uma versão divertida e descontraída, mantendo o espírito do original.
 

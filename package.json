@@ -1,0 +1,22 @@
+{
+  "name": "amigo-problema",
+  "version": "1.0.0",
+  "description": "**Amigo Problema** é um jogo digital inspirado no famoso jogo de cartas *\"Amigos de M...\"*. O jogo tem como objetivo identificar, por meio de perguntas inusitadas, qual amigo se encaixa melhor em determinadas situações, revelando aspectos engraçados ou embaraçosos das personalidades dos participantes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateusDanieel/amigo-problema.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MateusDanieel/amigo-problema/issues"
+  },
+  "homepage": "https://github.com/MateusDanieel/amigo-problema#readme",
+  "devDependencies": {
+    "sass": "^1.86.1"
+  }
+}
