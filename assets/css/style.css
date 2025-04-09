@@ -2,6 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  color: #FFF;
+}
+
+body {
+  background-color: #000A14;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sec-header__content__title {
+  font-size: 48px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.sec-header__content__subtitle {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.sec-header__content__lst {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */

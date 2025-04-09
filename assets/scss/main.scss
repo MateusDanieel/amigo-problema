@@ -1,5 +1,44 @@
+$pink: #FF017A;
+$blue: #000A14;
+$white: #FFF;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.5;
+    color: $white;
+}
+
+body {
+    background-color: $blue;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sec-header {
+    &__content {
+        &__title {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        &__subtitle {
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        &__lst {
+            list-style: none;
+        }
+    }
 }
