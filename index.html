@@ -8,6 +8,65 @@
 </head>
 <body>
     
+    <header class="sec-header">
+        <div class="sec-header__content__content container">
+            <h1 class="sec-header__content__title">
+                Amigo Problema
+            </h1>
+    
+            <h2 class="sec-header__content__subtitle">
+                Regras do Jogo:
+            </h2>
+    
+            <ol>
+                <li><b>Reúna seus amigos</b> e escolha alguém para começar como o "Leitor da Rodada".</li>
+                <li>O Leitor sorteia uma pergunta e lê em voz alta.</li>
+                <li>Todos os jogadores apontam (ou votam) em quem mais se encaixa na descrição da pergunta.</li>
+                <li>Quem receber mais votos “ganha” a carta da rodada.</li>
+                <li>O próximo jogador se torna o novo Leitor.</li>
+                <li><b>Quem acumular 5 cartas primeiro vence e é coroado o grande Amigo Problema do grupo!</b></li>
+                <li><b>Dica: O objetivo é se divertir (e se expor um pouquinho). Leve na esportiva!</b></li>
+            </ol>
+        </div>
+    </header>
+
+    <section class="sec-add-players">
+        <div class="sec-add-players__content container">
+
+            <form method="post" class="sec-add-players__content__form">
+                <label for="players" class="sec-add-players__content__form__label">Jogadores <small>Insira o nome dos jogadores separados por vírgula (Ex.: Mateus, Daniel, João, Maria)</small></label>
+                <input type="text" id="players" placeholder="" class="sec-add-players__content__form__input" required />
+
+                <button type="submit" class="sec-add-players__content__form__bt">
+                    Adicionar Jogadores
+                </button>
+            </form>
+
+            <table class="sec-add-players__content__table">
+                <thead>
+                    <tr>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            PLAYER 1
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-add-players__content__table__bt-remove">
+                               &times;
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
 
 
 
