@@ -1,6 +1,7 @@
+$white: #FFF;
 $pink: #FF017A;
 $blue: #000A14;
-$white: #FFF;
+$black: #000;
 
 * {
     margin: 0;
@@ -17,6 +18,48 @@ body {
     background-color: $blue;
 }
 
+%bt-default {
+    background-color: $pink;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+%table-default {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba($white, .5);
+    margin-bottom: 20px;
+
+    tr {
+        border-bottom: 1px solid rgba($white, .5);
+
+        th, td {
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        th {
+            font-weight: 400;
+        }
+
+        td {
+            border-top: 1px solid rgba($white, .5);
+        }
+
+        
+    }
+}
+
 .container {
     width: 100%;
     max-width: 1170px;
@@ -24,12 +67,42 @@ body {
     padding: 0 20px;
 }
 
+.sec-navbar {
+    padding: 20px 0;
+    box-shadow: 1px 1px 10px rgba($black, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: $blue;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        &__lst {
+            list-style: none;
+        }
+    }
+}
+
 .sec-header {
+    margin-top: 76px;
+    padding: 20px 0;
+
     &__content {
         &__title {
             font-size: 48px;
             text-transform: uppercase;
-            text-align: center;
         }
 
         &__subtitle {
@@ -39,6 +112,222 @@ body {
 
         &__lst {
             list-style: none;
+
+            &__item {
+                font-size: 18px;
+
+                &::before {
+                    content: "-";
+                    color: $white;
+                    font-size: 24px;
+                    margin-right: 10px;
+                }
+
+                &:last-child {
+                    text-transform: uppercase;
+                    position: relative;
+                    overflow: hidden;
+                    padding: 0 0 0 15px;
+                    margin: 20px 0;
+
+                    &::before {
+                        content: "";
+                        margin-right: 10px;
+                        width: 5px;
+                        height: 150px;
+                        background-color: $white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sec-add-players {
+    &__content {
+        &__form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &__label {
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                display: inline-block;
+
+                small {
+                    display: block;
+                    font-size: 14px;
+                    opacity: .5;
+                    font-style: italic;
+                    font-weight: 300;
+                }
+            }
+
+            &__input {
+                background-color: transparent;
+                color: $white;
+                outline: none;
+                border: 1px solid rgba($white, .5);
+                padding: 10px;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            &__bt {
+                @extend %bt-default;
+                margin: 10px 0 20px;
+            }
+        }
+
+        &__table {
+            @extend %table-default;
+
+            &__bt-remove {
+                @extend %bt-default;
+                margin-left: auto;
+            }
+        }
+
+        &__bt-start-game {
+            @extend %bt-default;
+        }
+
+        
+    }
+}
+
+.sec-game {
+    margin-top: 76px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        &__cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            &__deck {
+                width: 300px;
+                height: 450px;
+                border: 0;
+                border-radius: 5px;
+                position: relative;
+                background-color: $white;
+                overflow: hidden;
+                cursor: pointer;
+                color: $blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 20px;
+
+                &::before {
+                    content: '';
+                    width: calc(100% - 40px);
+                    height: calc(100% - 40px);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: $blue;
+                    border-radius: 5px;
+                    z-index: 100;
+                }
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 225px;
+                    z-index: 200;
+                    background-color: $white;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    transform: rotate(5deg);
+                }
+                
+                .fa-poop {
+                    z-index: 300;
+                    color: $blue;
+                }
+            }
+
+            &__card {
+                width: 300px;
+                height: 450px;
+                border-radius: 5px;
+                position: relative;
+                background-color: $white;
+                overflow: hidden;
+                color: $blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::before {
+                    content: '';
+                    width: calc(100% - 40px);
+                    height: calc(100% - 40px);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: $blue;
+                    border-radius: 5px;
+                    z-index: 100;
+                }
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 225px;
+                    z-index: 200;
+                    background-color: $white;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    transform: rotate(-5deg);
+                }
+
+                &__question {
+                    font-family: "Anton", sans-serif;
+                    line-height: 1.5;
+                    font-size: 20px;
+                    font-weight: 400;
+                    text-align: center;
+                    color: $blue;
+                    z-index: 300;
+                    padding: 40px;
+                }
+            }
+        }
+
+        &__table {
+            @extend %table-default;
+
+            &__bt {
+                @extend %bt-default;
+                margin-left: auto;
+            }
         }
     }
 }

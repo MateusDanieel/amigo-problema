@@ -6,17 +6,30 @@
     <title>Amigo Problema | Por Mateus Daniel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <nav class="sec-navbar">
+        <div class="sec-navbar__content container">
+            <a href="./" class="sec-navbar__content__logo">
+                Amigo Problema
+            </a>
+
+            <ul class="sec-navbar__content__lst">
+                <li class="sec-navbar__content__lst__item">
+                    <a href="https://github.com/MateusDanieel/amigo-problema" target="_blank">
+                        <i class="fa-brands fa-github-alt fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     
     <header class="sec-header">
         <div class="sec-header__content__content container">
-            <h1 class="sec-header__content__title">
-                Amigo Problema
-            </h1>
-    
+            
             <h2 class="sec-header__content__subtitle">
                 Regras do Jogo
             </h2>
@@ -28,7 +41,7 @@
                 <li class="sec-header__content__lst__item">Quem receber mais votos “ganha” a carta da rodada.</li>
                 <li class="sec-header__content__lst__item">O próximo jogador se torna o novo Leitor.</li>
                 <li class="sec-header__content__lst__item"><b>Quem acumular 5 cartas primeiro vence e é coroado o grande Amigo Problema do grupo!</b></li>
-                <li class="sec-header__content__lst__item"><b>Dica: O objetivo é se divertir (e se expor um pouquinho). Leve na esportiva!</b></li>
+                <li class="sec-header__content__lst__item"><b>Dica de ouro: O objetivo é se divertir (e se expor um pouquinho). Leve na esportiva!</b></li>
             </ul>
         </div>
     </header>
@@ -41,25 +54,49 @@
                 <input type="text" id="players" placeholder="" class="sec-add-players__content__form__input" required />
 
                 <button type="submit" class="sec-add-players__content__form__bt">
-                    Adicionar Jogadores
+                    <i class="fa-solid fa-user-plus"></i> Adicionar Jogadores
                 </button>
             </form>
 
-            <table class="sec-add-players__content__table">
+            <table class="sec-add-players__content__table" cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
-                        <th colspan="2"></th>
+                        <th colspan="2">Lista de Jogadores</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            PLAYER 1
+                            Mateus
                         </td>
                         
                         <td>
                             <button type="button" class="sec-add-players__content__table__bt-remove">
-                               &times;
+                                <i class="fa-solid fa-user-xmark"></i> Remover Jogador
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            João
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-add-players__content__table__bt-remove">
+                                <i class="fa-solid fa-user-xmark"></i> Remover Jogador
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Maria
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-add-players__content__table__bt-remove">
+                                <i class="fa-solid fa-user-xmark"></i> Remover Jogador
                             </button>
                         </td>
                     </tr>
@@ -67,7 +104,7 @@
             </table>
 
             <button type="button" class="sec-add-players__content__bt-start-game">
-                Iniciar
+                <i class="fa-solid fa-play"></i> Começar o Jogo
             </button>
         </div>
     </section>
@@ -76,16 +113,90 @@
         <div class="sec-game__content container">
             <div class="sec-game__content__cards">
                 <button type="button" class="sec-game__content__cards__deck">
-                    ...
+                    <i class="fa-solid fa-poop fa-4x"></i>
                 </button>
 
                 <article class="sec-game__content__cards__card">
-                    Quem aqui acharia uma boa ideia fazer um empréstimo para investir em NFTs de gatos?
+
+                    <span class="sec-game__content__cards__card__question">
+                        Quem aqui acharia uma boa ideia fazer um empréstimo para investir em NFTs de gatos?
+                    </span>
+                    
                 </article>
+
+                
             </div>
+
+            <table class="sec-game__content__table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th colspan="3">Lista de Jogadores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Mateus
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-game__content__table__bt">
+                                <i class="fa-solid fa-check-to-slot"></i> Votar
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            João
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-game__content__table__bt">
+                                <i class="fa-solid fa-check-to-slot"></i> Votar
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Maria
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-poop"></i>
+
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-game__content__table__bt">
+                                <i class="fa-solid fa-check-to-slot"></i> Votar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            
 
         </div>
     </section>
+
 
 
 
