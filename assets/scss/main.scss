@@ -224,6 +224,7 @@ body {
             flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
+            margin-bottom: 20px;
 
             &__deck {
                 width: 300px;
@@ -339,10 +340,6 @@ body {
         &__table {
             @extend %table-default;
 
-            @media (max-width: $sm) {
-                margin-top: 20px;
-            }
-
             &__bt {
                 @extend %bt-default;
                 margin-left: auto;
@@ -353,6 +350,22 @@ body {
                 }
             }
         }
+    }
+}
+
+.sec-footer {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: $white;
+
+    @media (max-width: $sm) {
+        font-size: 14px;
+    }   
+
+    a {
+        font-weight: 400;
     }
 }
 
