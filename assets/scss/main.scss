@@ -167,7 +167,7 @@ body {
 }
 
 .sec-game {
-    margin-top: 76px;
+    margin-top: 100px;
 
     &__content {
         display: flex;
@@ -213,10 +213,10 @@ body {
                     right: 0;
                     bottom: 0;
                     margin: auto;
-                    background-color: $blue;
+                    background-color: $pink;
                     z-index: 100;
                 }
-
+/*
                 &::after {
                     content: '';
                     width: 100%;
@@ -234,10 +234,10 @@ body {
                         height: 150px;
                     }
                 }
-                
+*/
                 .fa-poop {
                     z-index: 300;
-                    color: $blue;
+                    color: $white;
                 }
             }
 
@@ -262,7 +262,7 @@ body {
                     right: 0;
                     bottom: 0;
                     margin: auto;
-                    background-color: $blue;
+                    background-color: $pink;
                     z-index: 100;
                 }
 
@@ -286,7 +286,7 @@ body {
                     font-size: 20px;
                     font-weight: 400;
                     text-align: center;
-                    color: $blue;
+                    color: $pink;
                     z-index: 300;
                     padding: 40px;
                 }

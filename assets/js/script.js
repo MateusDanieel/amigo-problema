@@ -22,7 +22,7 @@
 
     openBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         if (typeof modal.showModal === "function") {
             modal.showModal();
         } else {
@@ -48,15 +48,16 @@
     });
 })();
 
-// add players
 (() => {
     'use strict';
 
+    // sec-add-players
     let players = [];
 
     const inputPlayers = document.querySelector('.sec-add-players__content__form__input');
-    const btSubmit = document.querySelector('.sec-add-players__content__form__bt');
     const tablePlayers = document.querySelector('.sec-add-players__content__table tbody');
+    const btSubmit = document.querySelector('.sec-add-players__content__form__bt');
+    const btPlay = document.querySelector('.sec-add-players__content__bt-start-game');
 
     function renderPlayers() {
         tablePlayers.innerHTML = '';
@@ -102,4 +103,23 @@
             renderPlayers(); 
         }
     });
+
+    btPlay.addEventListener('click', () => {
+        
+        if (players.length < 3) {
+            window.alert('ADICIONE NO MÍNIMO 3 JOGADORES!');
+        } else {
+            const secPlayers = document.querySelector('.sec-add-players');
+            const secGame = document.querySelector('.sec-game');
+            
+            secPlayers.setAttribute('hidden', 'true');
+            secGame.removeAttribute('hidden');
+
+
+        }
+    });
+
+    
+
+
 })();
