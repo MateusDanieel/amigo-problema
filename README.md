@@ -11,7 +11,7 @@ O jogo é simples e rápido de jogar. Ele funciona da seguinte maneira:
 1. Um jogador escolhe uma carta, que contém uma pergunta engraçada.
 2. Os outros jogadores devem escolher quem, entre eles, se encaixa melhor na situação descrita na carta.
 3. Quem for escolhido mais vezes ganha a rodada.
-4. O jogo continua até que alguém se torne o "Amigo Problema", ou até que todos se divirtam!
+4. O jogo continua até que alguém vença 5 rodadas e se torne o "Amigo Problema".
 
 ## Links
 
