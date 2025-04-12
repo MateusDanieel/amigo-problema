@@ -22,6 +22,7 @@
     
     const inputPlayers = document.querySelector('.sec-add-players__content__form__input');
     const btSubmit = document.querySelector('.sec-add-players__content__form__bt');
+    const tablePlayers = document.querySelector('.sec-add-players__content__table tbody');
 
     btSubmit.addEventListener('click', function(e) {
         e.preventDefault();
@@ -32,7 +33,32 @@
             getPlayers.forEach((el) => {
                 players.push(el);
             });
+
+            tablePlayers.innerHTML = '';
+
+            players.forEach((playerName, playerId)=> {
+                tablePlayers.innerHTML +=
+                `
+                <tr>
+                        <td>
+                            ${playerName}
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-add-players__content__table__bt-remove">
+                                <i class="fa-solid fa-user-xmark"></i> Remover Jogador
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            inputPlayers.value = '';
+
+            
         }
+
+
 
     });
 
