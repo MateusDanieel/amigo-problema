@@ -1,3 +1,4 @@
+// get mobile
 (() => {
     function isMobile() {
         const userAgentMatch = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -13,6 +14,41 @@
     }
 })();
 
+// modal rules
+(() => {
+    const modal = document.querySelector('.sec-modal-rules');
+    const openBtn = document.querySelector('.sec-navbar__content__lst__item__rules');
+    const closeBtn = modal.querySelector('.sec-modal-rules__content__header__bt-fechar');
+
+    openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        if (typeof modal.showModal === "function") {
+            modal.showModal();
+        } else {
+            alert("Seu navegador não suporta <dialog>.");
+        }
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.close();
+    });
+
+    modal.addEventListener('click', (event) => {
+        const rect = modal.querySelector('.sec-modal-rules__content').getBoundingClientRect();
+        const isInDialog = (
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom
+        );
+        if (!isInDialog) {
+            modal.close();
+        }
+    });
+})();
+
+// add players
 (() => {
     'use strict';
 
@@ -51,7 +87,6 @@
         }
     });
 
-    // Delegação de evento no <tbody>
     tablePlayers.addEventListener('click', (e) => {
         if (e.target.closest('.sec-add-players__content__table__bt-remove')) {
             const button = e.target.closest('.sec-add-players__content__table__bt-remove');
@@ -64,7 +99,7 @@
                 players.splice(id, 1);
             }
 
-            renderPlayers(); // re-renderiza a tabela atualizada
+            renderPlayers(); 
         }
     });
 })();
