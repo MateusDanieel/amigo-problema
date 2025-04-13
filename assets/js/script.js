@@ -111,10 +111,37 @@
         } else {
             const secPlayers = document.querySelector('.sec-add-players');
             const secGame = document.querySelector('.sec-game');
+            const tablePlayersList = document.querySelector('.sec-game__content__table tbody');
             
             secPlayers.setAttribute('hidden', 'true');
             secGame.removeAttribute('hidden');
 
+            tablePlayersList.innerHTML = '';
+
+            players.forEach((playerName, playerId) => {
+                tablePlayersList.innerHTML += 
+                `
+                    <tr>
+                        <td>
+                            ${playerName}
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                            <i class="fa-solid fa-poop"></i>
+                        </td>
+                        
+                        <td>
+                            <button type="button" class="sec-game__content__table__bt" data-player="${playerId}">
+                                <i class="fa-solid fa-check-to-slot"></i> Votar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
 
         }
     });
