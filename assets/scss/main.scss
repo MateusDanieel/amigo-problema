@@ -99,62 +99,18 @@ body {
 
         &__lst {
             list-style: none;
-        }
-    }
-}
-
-.sec-header {
-    margin-top: 76px;
-    padding: 20px 0;
-
-    &__content {
-        &__title {
-            font-size: 48px;
-            text-transform: uppercase;
-        }
-
-        &__subtitle {
-            font-size: 24px;
-            text-transform: uppercase;
-        }
-
-        &__lst {
-            list-style: none;
+            display: flex;
 
             &__item {
-                font-size: 18px;
-
-                &::before {
-                    content: "-";
-                    color: $white;
-                    font-size: 24px;
-                    margin-right: 10px;
-                }
-
-                &:last-child {
-                    text-transform: uppercase;
-                    position: relative;
-                    overflow: hidden;
-                    padding: 0 0 0 15px;
-                    margin: 20px 0;
-
-                    &::before {
-                        content: "";
-                        margin-right: 10px;
-                        width: 5px;
-                        height: 150px;
-                        background-color: $white;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                    }
-                }
+                margin-left: 20px;
             }
         }
     }
 }
 
 .sec-add-players {
+    margin-top: 100px;
+
     &__content {
         &__form {
             display: flex;
@@ -211,7 +167,7 @@ body {
 }
 
 .sec-game {
-    margin-top: 76px;
+    margin-top: 100px;
 
     &__content {
         display: flex;
@@ -257,10 +213,10 @@ body {
                     right: 0;
                     bottom: 0;
                     margin: auto;
-                    background-color: $blue;
+                    background-color: $pink;
                     z-index: 100;
                 }
-
+/*
                 &::after {
                     content: '';
                     width: 100%;
@@ -278,10 +234,10 @@ body {
                         height: 150px;
                     }
                 }
-                
+*/
                 .fa-poop {
                     z-index: 300;
-                    color: $blue;
+                    color: $white;
                 }
             }
 
@@ -306,7 +262,7 @@ body {
                     right: 0;
                     bottom: 0;
                     margin: auto;
-                    background-color: $blue;
+                    background-color: $pink;
                     z-index: 100;
                 }
 
@@ -330,7 +286,7 @@ body {
                     font-size: 20px;
                     font-weight: 400;
                     text-align: center;
-                    color: $blue;
+                    color: $pink;
                     z-index: 300;
                     padding: 40px;
                 }
@@ -369,22 +325,26 @@ body {
     }
 }
 
-.sec-modal {
+.sec-modal-rules {
     position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: rgba($black, .5);
     border: 0;
     justify-content: center;
     align-items: center; 
-    display: flex;
+    display: none;
     padding: 0 20px;
-    
-    &[hidden] {
-        display: none;
+    background-color: transparent;
+
+    &[open] {
+        display: flex;
+    }
+
+    &::backdrop {
+        background-color: rgba($black, .5);
     }
 
     &__content {
@@ -393,7 +353,111 @@ body {
         background-color: $white;
         padding: 40px;
         box-shadow: 1px 1px 10px rgba($black, .5);
-        overflow-x: scroll;
+        position: relative;
+
+        @media (max-width: $sm) {
+            padding: 20px;
+        }
+
+        &__header {
+            &__bt-fechar {
+                background-color: transparent;
+                color: rgba($black, .5);
+                padding: 0;
+                margin: 0;
+                border: 0;
+                width: 48px;
+                height: 48px;
+                font-size: 64px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                outline: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        &__subtitle {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: $blue;
+
+            @media (max-width: $sm) {
+                font-size: 20px;
+            }
+        }
+
+        &__lst {
+            list-style: none;
+
+            &__item {
+                font-size: 18px;
+                color: $blue;
+
+                @media (max-width: $sm) {
+                    font-size: 16px;
+                }
+
+                b {
+                    color: $blue;
+                }
+
+                &::before {
+                    content: "-";
+                    margin-right: 10px;
+                }
+
+                &:last-child {
+                    text-transform: uppercase;
+                    position: relative;
+                    overflow: hidden;
+                    padding: 0 0 0 15px;
+                    margin: 20px 0;
+
+                    &::before {
+                        content: "";
+                        margin-right: 10px;
+                        width: 5px;
+                        height: 150px;
+                        background-color: $blue;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.sec-modal-game-over {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba($black, .5);
+    border: 0;
+    justify-content: center; 
+    align-items: center; 
+    display: none;
+    padding: 0 20px;
+    
+    &[open] {
+        display: flex;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 600px;
+        background-color: $white;
+        padding: 40px;
+        box-shadow: 1px 1px 10px rgba($black, .5);
 
         @media (max-width: $sm) {
             padding: 20px;

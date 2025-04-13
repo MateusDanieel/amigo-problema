@@ -18,39 +18,22 @@
             </a>
 
             <ul class="sec-navbar__content__lst">
+                
                 <li class="sec-navbar__content__lst__item">
-                    <a href="https://github.com/MateusDanieel/amigo-problema" target="_blank">
-                        <i class="fa-brands fa-github-alt fa-2x"></i>
+                    <a href="#" title="Regras" class="sec-navbar__content__lst__item__rules">
+                        <i class="fa-solid fa-circle-question fa-2x"></i>
                     </a>
                 </li>
+
             </ul>
         </div>
     </nav>
     
-    <header class="sec-header">
-        <div class="sec-header__content__content container">
-            
-            <h2 class="sec-header__content__subtitle">
-                Regras do Jogo
-            </h2>
-    
-            <ul class="sec-header__content__lst">
-                <li class="sec-header__content__lst__item"><b>Reúna seus amigos</b> e escolha alguém para começar como o "Leitor da Rodada".</li>
-                <li class="sec-header__content__lst__item">O Leitor sorteia uma pergunta e lê em voz alta.</li>
-                <li class="sec-header__content__lst__item">Todos os jogadores apontam (ou votam) em quem mais se encaixa na descrição da pergunta.</li>
-                <li class="sec-header__content__lst__item">Quem receber mais votos “ganha” a carta da rodada.</li>
-                <li class="sec-header__content__lst__item">O próximo jogador se torna o novo Leitor.</li>
-                <li class="sec-header__content__lst__item"><b>Quem acumular 5 cartas primeiro vence e é coroado o grande Amigo Problema do grupo!</b></li>
-                <li class="sec-header__content__lst__item"><b>Dica de ouro: O objetivo é se divertir (e se expor um pouquinho). Leve na esportiva!</b></li>
-            </ul>
-        </div>
-    </header>
-
     <section class="sec-add-players">
         <div class="sec-add-players__content container">
 
             <form method="post" class="sec-add-players__content__form">
-                <label for="players" class="sec-add-players__content__form__label">Jogadores <small>Insira o nome dos jogadores separados por vírgula (Ex.: Mateus, Daniel, João, Maria)</small></label>
+                <label for="players" class="sec-add-players__content__form__label">JOGADORES <small>Insira o nome dos jogadores separados por vírgula (Ex.: Mateus, Daniel, João, Maria)</small></label>
                 <input type="text" id="players" placeholder="" class="sec-add-players__content__form__input" required />
 
                 <button type="submit" class="sec-add-players__content__form__bt">
@@ -82,7 +65,7 @@
         <div class="sec-game__content container">
             <div class="sec-game__content__cards">
                 <button type="button" class="sec-game__content__cards__deck">
-                    <i class="fa-solid fa-poop fa-4x"></i>
+                    <i class="fa-solid fa-poop fa-5x"></i>
                 </button>
 
                 <article class="sec-game__content__cards__card">
@@ -102,82 +85,52 @@
                         <th colspan="3">Lista de Jogadores</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            Mateus
-                        </td>
-
-                        <td>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                        </td>
-                        
-                        <td>
-                            <button type="button" class="sec-game__content__table__bt">
-                                <i class="fa-solid fa-check-to-slot"></i> Votar
-                            </button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            João
-                        </td>
-
-                        <td>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                        </td>
-                        
-                        <td>
-                            <button type="button" class="sec-game__content__table__bt">
-                                <i class="fa-solid fa-check-to-slot"></i> Votar
-                            </button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            Maria
-                        </td>
-
-                        <td>
-                            <i class="fa-solid fa-poop"></i>
-                        </td>
-                        
-                        <td>
-                            <button type="button" class="sec-game__content__table__bt">
-                                <i class="fa-solid fa-check-to-slot"></i> Votar
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
     </section>
 
-    <dialog class="sec-modal" aria-labelledby="modalGameOver" hidden>
-        <div class="sec-modal__content">
-            <h2 class="sec-modal__content__title" id="modalGameOver">Fim de Jogo!</h2>
+    <dialog class="sec-modal-rules" aria-labelledby="modalRules">
+        <div class="sec-modal-rules__content">
+            <div class="sec-modal-rules__content__header">
+                <button type="button" class="sec-modal-rules__content__header__bt-fechar" aria-label="Fechar modal">
+                    &times;
+                </button>
+            </div>
+
+            <h2 class="sec-modal-rules__content__subtitle" id="modalRules">
+                Regras do Jogo
+            </h2>
+    
+            <ul class="sec-modal-rules__content__lst">
+                <li class="sec-modal-rules__content__lst__item"><b>Reúna seus amigos</b> e escolha alguém para começar como o "Leitor da Rodada".</li>
+                <li class="sec-modal-rules__content__lst__item">O Leitor sorteia uma pergunta e lê em voz alta.</li>
+                <li class="sec-modal-rules__content__lst__item">Todos os jogadores apontam (ou votam) em quem mais se encaixa na descrição da pergunta.</li>
+                <li class="sec-modal-rules__content__lst__item">Quem receber mais votos “ganha” a carta da rodada.</li>
+                <li class="sec-modal-rules__content__lst__item">O próximo jogador se torna o novo Leitor.</li>
+                <li class="sec-modal-rules__content__lst__item"><b>Quem acumular 5 cartas primeiro vence e é coroado o grande Amigo Problema do grupo!</b></li>
+                <li class="sec-modal-rules__content__lst__item"><b>Dica de ouro: O objetivo é se divertir (e se expor um pouquinho). Leve na esportiva!</b></li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="sec-modal-game-over" aria-labelledby="modalGameOver">
+        <div class="sec-modal-game-over__content">
+            <h2 class="sec-modal-game-over__content__title" id="modalGameOver">Fim de Jogo!</h2>
             
-            <p class="sec-modal__content__description">Parabéns [PLAYER], você é um amigo problema.</p>
+            <p class="sec-modal-game-over__content__description">Parabéns [PLAYER], você é um amigo problema.</p>
 
-            <p class="sec-modal__content__description">Você seria...</p>
+            <p class="sec-modal-game-over__content__description">Você seria...</p>
 
-            <ul class="sec-modal__content__lst">
-                <li class="sec-modal__content__lst__item">Quem aqui acharia uma boa ideia fazer um empréstimo para investir em NFTs de gatos;</li>
-                <li class="sec-modal__content__lst__item">Quem tem mais chance de iniciar uma briga por causa de um jogo de tabuleiro;</li>
-                <li class="sec-modal__content__lst__item">Quem seria expulso de uma reunião de trabalho por um comentário 'inapropriado';</li>
-                <li class="sec-modal__content__lst__item">Quem já enviou mensagem errada no grupo da família e sobreviveu pra contar;</li>
-                <li class="sec-modal__content__lst__item">Quem mais provavelmente fingiria estar ocupado só para não ajudar na mudança;</li>
+            <ul class="sec-modal-game-over__content__lst">
+                <li class="sec-modal-game-over__content__lst__item">Quem aqui acharia uma boa ideia fazer um empréstimo para investir em NFTs de gatos;</li>
+                <li class="sec-modal-game-over__content__lst__item">Quem tem mais chance de iniciar uma briga por causa de um jogo de tabuleiro;</li>
+                <li class="sec-modal-game-over__content__lst__item">Quem seria expulso de uma reunião de trabalho por um comentário 'inapropriado';</li>
+                <li class="sec-modal-game-over__content__lst__item">Quem já enviou mensagem errada no grupo da família e sobreviveu pra contar;</li>
+                <li class="sec-modal-game-over__content__lst__item">Quem mais provavelmente fingiria estar ocupado só para não ajudar na mudança;</li>
             </ul>
 
-            <button type="button" class="sec-modal__content__bt">
+            <button type="button" class="sec-modal-game-over__content__bt">
                 <i class="fa-solid fa-rotate-left"></i> Jogar Novamente
             </button>
         </div>
