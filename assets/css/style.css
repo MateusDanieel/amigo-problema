@@ -283,6 +283,9 @@ body {
 .sec-modal-rules[open] {
   display: flex;
 }
+.sec-modal-rules::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .sec-modal-rules__content {
   width: 100%;
   max-width: 600px;
@@ -290,9 +293,6 @@ body {
   padding: 40px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   position: relative;
-}
-.sec-modal-rules__content::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 576px) {
   .sec-modal-rules__content {
@@ -322,6 +322,11 @@ body {
   text-transform: uppercase;
   color: #000A14;
 }
+@media (max-width: 576px) {
+  .sec-modal-rules__content__subtitle {
+    font-size: 20px;
+  }
+}
 .sec-modal-rules__content__lst {
   list-style: none;
 }
@@ -329,12 +334,16 @@ body {
   font-size: 18px;
   color: #000A14;
 }
+@media (max-width: 576px) {
+  .sec-modal-rules__content__lst__item {
+    font-size: 16px;
+  }
+}
 .sec-modal-rules__content__lst__item b {
   color: #000A14;
 }
 .sec-modal-rules__content__lst__item::before {
   content: "-";
-  font-size: 24px;
   margin-right: 10px;
 }
 .sec-modal-rules__content__lst__item:last-child {

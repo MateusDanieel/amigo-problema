@@ -343,6 +343,10 @@ body {
         display: flex;
     }
 
+    &::backdrop {
+        background-color: rgba($black, .5);
+    }
+
     &__content {
         width: 100%;
         max-width: 600px;
@@ -350,10 +354,6 @@ body {
         padding: 40px;
         box-shadow: 1px 1px 10px rgba($black, .5);
         position: relative;
-
-        &::backdrop {
-            background-color: rgba($black, .5);
-        }
 
         @media (max-width: $sm) {
             padding: 20px;
@@ -384,6 +384,10 @@ body {
             font-size: 24px;
             text-transform: uppercase;
             color: $blue;
+
+            @media (max-width: $sm) {
+                font-size: 20px;
+            }
         }
 
         &__lst {
@@ -393,13 +397,16 @@ body {
                 font-size: 18px;
                 color: $blue;
 
+                @media (max-width: $sm) {
+                    font-size: 16px;
+                }
+
                 b {
                     color: $blue;
                 }
 
                 &::before {
                     content: "-";
-                    font-size: 24px;
                     margin-right: 10px;
                 }
 

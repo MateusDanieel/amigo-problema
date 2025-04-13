@@ -128,10 +128,6 @@
 
                         <td>
                             <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
-                            <i class="fa-solid fa-poop"></i>
                         </td>
                         
                         <td>
