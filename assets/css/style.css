@@ -375,11 +375,11 @@ body {
   border: 0;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
   padding: 0 20px;
 }
-.sec-modal-game-over[hidden] {
-  display: none;
+.sec-modal-game-over[open] {
+  display: flex;
 }
 .sec-modal-game-over__content {
   width: 100%;

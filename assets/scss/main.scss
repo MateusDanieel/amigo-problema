@@ -443,13 +443,13 @@ body {
     z-index: 1000;
     background-color: rgba($black, .5);
     border: 0;
-    justify-content: center;
+    justify-content: center; 
     align-items: center; 
-    display: flex;
+    display: none;
     padding: 0 20px;
     
-    &[hidden] {
-        display: none;
+    &[open] {
+        display: flex;
     }
 
     &__content {
