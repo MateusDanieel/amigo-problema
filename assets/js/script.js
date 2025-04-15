@@ -104,9 +104,10 @@
         }
     });
 
+    // gameplay
     btPlay.addEventListener('click', () => {
 
-        mostrarNovaPergunta();
+        buyCard();
         
         if (players.length < 3) {
             window.alert('ADICIONE NO MÍNIMO 3 JOGADORES!');
@@ -123,14 +124,12 @@
             players.forEach((playerName, playerId) => {
                 tablePlayersList.innerHTML += 
                 `
-                    <tr>
+                    <tr data-player="${playerId}">
                         <td>
                             ${playerName}
                         </td>
 
-                        <td>
-                            <i class="fa-solid fa-poop"></i>
-                        </td>
+                        <td></td>
                         
                         <td>
                             <button type="button" class="sec-game__content__table__bt" data-player="${playerId}">
@@ -141,41 +140,67 @@
                 `;
             });
 
+            document.querySelectorAll('.sec-game__content__table__bt').forEach(button => {
+                button.addEventListener('click', () => {
+                    const votedPlayerId = button.getAttribute('data-player');
+                    const playerRow = document.querySelector(`tr[data-player="${votedPlayerId}"]`);
+                    const poopCell = playerRow.querySelector('td:nth-child(2)');
+            
+                    poopCell.innerHTML += ' <i class="fa-solid fa-poop"></i>';
+            
+                    const poopCount = poopCell.querySelectorAll('.fa-poop').length;
+            
+                    if (poopCount >= 5) {
+                        openGameOverModal(playerRow.querySelector('td').innerText.trim());
+                    }
+                });
+            });
+
+            function openGameOverModal(winner) {
+                const modal = document.querySelector('.sec-modal-game-over');
+                const setWinner = document.querySelector('.sec-modal-game-over__content__description__player');
+
+                setWinner.innerText = winner;
+
+                modal.setAttribute('open', true);
+            }
+
+
+
         }
     });
 
-    let perguntas = [];
-    let perguntasRestantes = [];
-    const btComprarCarta = document.querySelector('.sec-game__content__cards__deck');
+    let questions = [];
+    let remQuestions = [];
+    const btBuyCard = document.querySelector('.sec-game__content__cards__deck');
 
     async function carregarPerguntas() {
       try {
         const response = await fetch('./data/questions.json');
-        perguntas = await response.json();
-        perguntasRestantes = [...perguntas];
+        questions = await response.json();
+        remQuestions = [...questions];
       } catch (error) {
-        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Erro ao carregar perguntas.';
-        console.error('Erro ao carregar perguntas:', error);
+        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Erro ao carregar carta.';
+        console.error('Erro ao carregar carta:', error);
       }
     }
 
-    function mostrarNovaPergunta() {
-      if (perguntasRestantes.length === 0) {
-        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Acabaram as perguntas! Recarregue a página para reiniciar.';
+    function buyCard() {
+      if (remQuestions.length === 0) {
+        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Acabaram as questions! Recarregue a página para reiniciar.';
         return;
       }
 
-      const index = Math.floor(Math.random() * perguntasRestantes.length);
-      const perguntaSelecionada = perguntasRestantes.splice(index, 1)[0];
+      const index = Math.floor(Math.random() * remQuestions.length);
+      const questionSelected = remQuestions.splice(index, 1)[0];
 
-      document.querySelector('.sec-game__content__cards__card__question').innerText = perguntaSelecionada.pergunta;
+      document.querySelector('.sec-game__content__cards__card__question').innerText = questionSelected.pergunta;
     }
 
-    btComprarCarta.addEventListener('click', () => {
-        mostrarNovaPergunta();
+    btBuyCard.addEventListener('click', () => {
+        buyCard();
     });
 
-    // Carregar perguntas ao iniciar
     carregarPerguntas();
 
     

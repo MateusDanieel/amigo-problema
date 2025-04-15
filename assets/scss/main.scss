@@ -35,6 +35,8 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     display: block;
+    text-decoration: none;
+    display: inline-block;
 
     i {
         margin-right: 5px;
@@ -458,6 +460,8 @@ body {
         background-color: $white;
         padding: 40px;
         box-shadow: 1px 1px 10px rgba($black, .5);
+        display: flex;
+        flex-direction: column;
 
         @media (max-width: $sm) {
             padding: 20px;
@@ -485,6 +489,10 @@ body {
 
             @media (max-width: $sm) {
                 font-size: 16px;
+            }
+
+            &__player {
+                color: $blue;
             }
         }
 
