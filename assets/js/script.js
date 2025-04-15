@@ -105,6 +105,8 @@
     });
 
     btPlay.addEventListener('click', () => {
+
+        mostrarNovaPergunta();
         
         if (players.length < 3) {
             window.alert('ADICIONE NO MÍNIMO 3 JOGADORES!');
@@ -141,6 +143,40 @@
 
         }
     });
+
+    let perguntas = [];
+    let perguntasRestantes = [];
+    const btComprarCarta = document.querySelector('.sec-game__content__cards__deck');
+
+    async function carregarPerguntas() {
+      try {
+        const response = await fetch('./data/questions.json');
+        perguntas = await response.json();
+        perguntasRestantes = [...perguntas];
+      } catch (error) {
+        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Erro ao carregar perguntas.';
+        console.error('Erro ao carregar perguntas:', error);
+      }
+    }
+
+    function mostrarNovaPergunta() {
+      if (perguntasRestantes.length === 0) {
+        document.querySelector('.sec-game__content__cards__card__question').innerText = 'Acabaram as perguntas! Recarregue a página para reiniciar.';
+        return;
+      }
+
+      const index = Math.floor(Math.random() * perguntasRestantes.length);
+      const perguntaSelecionada = perguntasRestantes.splice(index, 1)[0];
+
+      document.querySelector('.sec-game__content__cards__card__question').innerText = perguntaSelecionada.pergunta;
+    }
+
+    btComprarCarta.addEventListener('click', () => {
+        mostrarNovaPergunta();
+    });
+
+    // Carregar perguntas ao iniciar
+    carregarPerguntas();
 
     
 
