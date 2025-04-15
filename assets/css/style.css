@@ -22,6 +22,8 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   display: block;
+  text-decoration: none;
+  display: inline-block;
 }
 .sec-modal-game-over__content__bt i, .sec-game__content__table__bt i, .sec-add-players__content__bt-start-game i, .sec-add-players__content__table__bt-remove i, .sec-add-players__content__form__bt i {
   margin-right: 5px;
@@ -387,6 +389,8 @@ body {
   background-color: #FFF;
   padding: 40px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 576px) {
   .sec-modal-game-over__content {
@@ -417,6 +421,9 @@ body {
   .sec-modal-game-over__content__description {
     font-size: 16px;
   }
+}
+.sec-modal-game-over__content__description__player {
+  color: #000A14;
 }
 .sec-modal-game-over__content__lst {
   list-style: none;
