@@ -157,6 +157,7 @@ body {
             &__bt-remove {
                 @extend %bt-default;
                 margin-left: auto;
+                display: block;
             }
         }
 
@@ -302,6 +303,7 @@ body {
                 @extend %bt-default;
                 margin-left: auto;
                 text-align: center;
+                display: block;
 
                 i {
                     margin-right: 0;
